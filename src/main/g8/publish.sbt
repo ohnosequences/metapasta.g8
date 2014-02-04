@@ -11,7 +11,7 @@ isPrivate := true
 
 releaseSettings
 
-bucketSuffix := "frutero.org"
+bucketSuffix := "$bucketSuffix$"
 
 releaseProcess <<= thisProjectRef apply { ref =>
   Seq[ReleaseStep](

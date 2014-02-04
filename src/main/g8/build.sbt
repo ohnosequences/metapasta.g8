@@ -2,14 +2,14 @@ import AssemblyKeys._
 
 Statika.distributionProject
 
-name := "metatest"
+name := "$name$"
 
 description := ""
 
-organization := "ohnosequences"
+organization := "$organization$"
 
 libraryDependencies ++= Seq(
-  "ohnosequences" % "metapasta_2.10" % "0.1.4-SNAPSHOT"
+  "ohnosequences" % "metapasta_2.10" % "0.1.5"
 )
 
 resolvers += Resolver.sonatypeRepo("snapshots")

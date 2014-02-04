@@ -16,14 +16,14 @@ object mockSamples {
 }
 
 object configuration extends MetapastaConfiguration (
-  metadataBuilder = new NisperonMetadataBuilder(new generated.metadata.metatest()),
+  metadataBuilder = new NisperonMetadataBuilder(new generated.metadata.$name$()),
   email = "museeer@gmail.com",
   lastWorkers = 1,
   uploadWorkers = None,
   samples = mockSamples.samples
 )
 
-object metatest extends Metapasta(configuration) {
+object $name$ extends Metapasta(configuration) {
 
 
 }
