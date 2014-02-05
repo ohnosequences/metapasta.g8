@@ -9,7 +9,7 @@ description := ""
 organization := "$organization$"
 
 libraryDependencies ++= Seq(
-  "ohnosequences" % "metapasta_2.10" % "0.1.5"
+  "ohnosequences" % "metapasta_2.10" % "0.1.6"
 )
 
 resolvers += Resolver.sonatypeRepo("snapshots")
