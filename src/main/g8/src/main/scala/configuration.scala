@@ -1,7 +1,9 @@
 import ohnosequences.awstools.s3.ObjectAddress
 import ohnosequences.nisperon.bundles.NisperonMetadataBuilder
 import ohnosequences.metapasta._
-
+import ohnosequences.awstools.autoscaling._
+import ohnosequences.nisperon._
+import ohnosequences.awstools.ec2._
 
 object mockSamples {
   val testBucket = "metapasta-test"
