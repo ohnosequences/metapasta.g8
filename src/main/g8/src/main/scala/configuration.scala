@@ -17,10 +17,11 @@ object mockSamples {
 
 object configuration extends MetapastaConfiguration (
   metadataBuilder = new NisperonMetadataBuilder(new generated.metadata.$name$()),
-  email = "museeer@gmail.com",
-  lastWorkers = 1,
+  email = "$email$",
+  mappingWorkers = Group(size = 10, max = 20, instanceType = InstanceType.M1Large, purchaseModel = OnDemand),
   uploadWorkers = None,
-  samples = mockSamples.samples
+  samples = mockSamples.samples,
+  mappingInstructions = Last()
 )
 
 object $name$ extends Metapasta(configuration) {
