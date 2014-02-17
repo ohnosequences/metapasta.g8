@@ -9,7 +9,7 @@ description := ""
 organization := "$organization$"
 
 libraryDependencies ++= Seq(
-  "ohnosequences" % "metapasta_2.10" % "0.1.6"
+  "ohnosequences" % "metapasta_2.10" % "0.1.9"
 )
 
 resolvers +=  Resolver.url("era7" + " public ivy releases",  url("http://releases.era7.com.s3.amazonaws.com"))(Resolver.ivyStylePatterns)
