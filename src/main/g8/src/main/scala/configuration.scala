@@ -1,3 +1,5 @@
+package $name$
+
 import ohnosequences.awstools.s3.ObjectAddress
 import ohnosequences.nisperon.bundles.NisperonMetadataBuilder
 import ohnosequences.metapasta._
