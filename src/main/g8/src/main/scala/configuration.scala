@@ -19,13 +19,16 @@ object mockSamples {
   val samples = List(s1, s2)
 }
 
-object configuration extends MetapastaConfiguration (
+object configuration extends BlastConfiguration (
   metadataBuilder = new NisperonMetadataBuilder(new generated.metadata.$name$()),
   email = "$email$",
-  mappingWorkers = Group(size = 10, max = 20, instanceType = InstanceType.M1Large, purchaseModel = OnDemand),
+  mappingWorkers = Group(size = 10, max = 20, instanceType = InstanceType.T1Micro, purchaseModel = OnDemand),
   uploadWorkers = None,
   samples = mockSamples.samples,
-  mappingInstructions = Last()
+  blastTemplate: String = """blastn -task megablast -db $name$ -query $input$ -out $output$ -max_target_seqs 1 -num_threads 1 -outfmt $out_format$ -show_gis""",
+  logging = true,
+  database = NTDatabase,
+  xmlOutput = true
 )
 
 object $name$ extends Metapasta(configuration) {
