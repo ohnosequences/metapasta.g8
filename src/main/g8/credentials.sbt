@@ -1,1 +1,1 @@
-s3credentialsProvider := $credentialsProvider$
+s3credentials := $credentialsProvider$
