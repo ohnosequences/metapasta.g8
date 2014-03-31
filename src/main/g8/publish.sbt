@@ -9,20 +9,20 @@ publishMavenStyle := false
 
 isPrivate := true
 
-releaseSettings
+//releaseSettings
 
 bucketSuffix := "$bucketSuffix$"
 
-releaseProcess <<= thisProjectRef apply { ref =>
-  Seq[ReleaseStep](
-    inquireVersions,
-    setReleaseVersion,
-    setNextVersion,
-    publishArtifacts
-  )
-}
+//releaseProcess <<= thisProjectRef apply { ref =>
+//  Seq[ReleaseStep](
+//    inquireVersions,
+//    setReleaseVersion,
+//    setNextVersion,
+//    publishArtifacts
+//  )
+//}
 
-nextVersion := { ver => sbtrelease.Version(ver).map(_.bumpMinor.string).getOrElse(versionFormatError) }
+//nextVersion := { ver => sbtrelease.Version(ver).map(_.bumpMinor.string).getOrElse(versionFormatError) }
 
 addCommandAlias("metapasta-publish", ";reload; release with-defaults")
 
