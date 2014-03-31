@@ -10,13 +10,10 @@ import ohnosequences.awstools.ec2._
 object mockSamples {
   val testBucket = "metapasta-test"
 
-  val ss1 = "SRR172902"
+  val ss1 = "supermock3"
   val s1 = PairedSample(ss1, ObjectAddress(testBucket, "mock/" + ss1 + ".fastq"), ObjectAddress(testBucket, "mock/" + ss1 + ".fastq"))
 
-  val ss2 = "SRR172903"
-  val s2 = PairedSample(ss2, ObjectAddress(testBucket, "mock/" + ss2 + ".fastq"), ObjectAddress(testBucket, "mock/" + ss2 + ".fastq"))
-
-  val samples = List(s1, s2)
+  val samples = List(s1)
 }
 
 object configuration extends BlastConfiguration (
