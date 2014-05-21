@@ -19,7 +19,7 @@ object mockSamples {
 object configuration extends BlastConfiguration (
   metadataBuilder = new NisperonMetadataBuilder(new generated.metadata.$name$()),
   email = "$email$",
-  passport = "$passport$",
+  password = "$password$",
   mappingWorkers = Group(size = 10, max = 20, instanceType = InstanceType.T1Micro, purchaseModel = OnDemand),
   uploadWorkers = None,
   samples = mockSamples.samples,
