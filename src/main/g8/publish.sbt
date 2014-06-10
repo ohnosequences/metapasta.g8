@@ -30,6 +30,7 @@ mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) => {
   case "log4j.properties" => MergeStrategy.first
   case "about.html" => MergeStrategy.first
   case "avsl.conf" => MergeStrategy.first
+  case "mime.types" => MergeStrategy.first
   case PathList("META-INF", "MANIFEST.MF") => MergeStrategy.discard
   // case PathList(_*) => MergeStrategy.first
  case PathList("META-INF", _*) => MergeStrategy.first
