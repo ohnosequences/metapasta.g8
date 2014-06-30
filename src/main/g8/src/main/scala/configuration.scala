@@ -20,12 +20,12 @@ object configuration extends BlastConfiguration (
   metadataBuilder = new NisperonMetadataBuilder(new generated.metadata.$name$()),
   email = "$email$",
   password = "$password$",
-  mappingWorkers = Group(size = 10, max = 20, instanceType = InstanceType.T1Micro, purchaseModel = OnDemand),
+  mappingWorkers = Group(size = 1, max = 20, instanceType = InstanceType.T1Micro, purchaseModel = OnDemand),
   uploadWorkers = None,
   samples = mockSamples.samples,
   logging = true,
-  database = NTDatabase,
-  xmlOutput = true
+  blastTemplate = """blastn -task megablast -db $db$ -query $input$ -out $output$ -max_target_seqs 1 -num_threads 1 -outfmt $out_format$ -show_gis""",
+  xmlOutput = false
 )
 
 object $name$ extends Metapasta(configuration) {
