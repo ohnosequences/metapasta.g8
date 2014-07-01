@@ -25,7 +25,8 @@ object configuration extends BlastConfiguration (
   samples = mockSamples.samples,
   logging = true,
   blastTemplate = """blastn -task megablast -db $db$ -query $input$ -out $output$ -max_target_seqs 1 -num_threads 1 -outfmt $out_format$ -show_gis""",
-  xmlOutput = false
+  xmlOutput = false,
+  assignmentConfiguration = AssignmentConfiguration(400, 0.8)
 )
 
 object $name$ extends Metapasta(configuration) {
