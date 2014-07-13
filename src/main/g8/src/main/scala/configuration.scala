@@ -14,15 +14,20 @@ object mockSamples {
   val s1 = PairedSample(ss1, ObjectAddress(testBucket, "mock/" + ss1 + ".fastq"), ObjectAddress(testBucket, "mock/" + ss1 + ".fastq"))
 
   val samples = List(s1)
+  
+  val t1 = SampleTag("t1")
+  val tagging = Map(s1 -> List(t1))
 }
 
 object configuration extends BlastConfiguration (
   metadataBuilder = new NisperonMetadataBuilder(new generated.metadata.$name$()),
+  defaultInstanceSpecs = NisperonConfiguration.defaultInstanceSpecs.copy(keyName = "nispero")
   email = "$email$",
   password = "$password$",
   mappingWorkers = Group(size = 1, max = 20, instanceType = InstanceType.c1_medium purchaseModel = OnDemand),
   uploadWorkers = None,
   samples = mockSamples.samples,
+  tagging = mockSamples.tagging,
   logging = true,
   blastTemplate = """blastn -task megablast -db $db$ -query $input$ -out $output$ -max_target_seqs 10 -num_threads 2 -outfmt $out_format$ -show_gis""",
   xmlOutput = false,
