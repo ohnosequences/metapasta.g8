@@ -30,7 +30,7 @@ object configuration extends BlastConfiguration (
   uploadWorkers = None,
   samples = mockSamples.samples,
   tagging = mockSamples.tagging,
-  chunksThreshold: Option[Int] = None, //use Some(n) for test configuration
+  chunksThreshold = None, //use Some(n) for test configuration
   logging = true,
   blastTemplate = """blastn -task megablast -db $db$ -query $input$ -out $output$ -max_target_seqs 10 -num_threads 2 -outfmt $out_format$ -show_gis""",
   xmlOutput = false,
