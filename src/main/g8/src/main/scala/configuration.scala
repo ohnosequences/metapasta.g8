@@ -6,6 +6,8 @@ import ohnosequences.metapasta._
 import ohnosequences.awstools.autoscaling._
 import ohnosequences.nisperon._
 import ohnosequences.awstools.ec2._
+import ohnosequences.metapasta.reporting._
+
 
 object mockSamples {
   val testBucket = "metapasta-test"
@@ -21,13 +23,14 @@ object mockSamples {
 
 object configuration extends BlastConfiguration (
   metadataBuilder = new NisperonMetadataBuilder(new generated.metadata.$name$()),
-  defaultInstanceSpecs = NisperonConfiguration.defaultInstanceSpecs.copy(keyName = "nispero")
+  defaultInstanceSpecs = NisperonConfiguration.defaultInstanceSpecs.copy(keyName = "nispero"),
   email = "$email$",
   password = "$password$",
-  mappingWorkers = Group(size = 1, max = 20, instanceType = InstanceType.c1_medium purchaseModel = OnDemand),
+  mappingWorkers = Group(size = 1, max = 20, instanceType = InstanceType.c1_medium, purchaseModel = SpotAuto),
   uploadWorkers = None,
   samples = mockSamples.samples,
   tagging = mockSamples.tagging,
+  chunksThreshold: Option[Int] = None, //use Some(n) for test configuration
   logging = true,
   blastTemplate = """blastn -task megablast -db $db$ -query $input$ -out $output$ -max_target_seqs 10 -num_threads 2 -outfmt $out_format$ -show_gis""",
   xmlOutput = false,
