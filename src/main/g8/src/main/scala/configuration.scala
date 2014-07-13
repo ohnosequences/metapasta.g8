@@ -26,7 +26,7 @@ object configuration extends BlastConfiguration (
   defaultInstanceSpecs = NisperonConfiguration.defaultInstanceSpecs.copy(keyName = "nispero"),
   email = "$email$",
   password = "$password$",
-  mappingWorkers = Group(size = 1, max = 20, instanceType = InstanceType.c1_medium, purchaseModel = SpotAuto),
+  mappingWorkers = Group(size = 1, max = 100, instanceType = InstanceType.c1_medium, purchaseModel = SpotAuto),
   uploadWorkers = None,
   samples = mockSamples.samples,
   tagging = mockSamples.tagging,
