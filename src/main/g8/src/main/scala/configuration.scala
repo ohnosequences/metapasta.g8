@@ -34,7 +34,8 @@ object configuration extends BlastConfiguration (
   logging = true,
   blastTemplate = """blastn -task megablast -db $db$ -query $input$ -out $output$ -max_target_seqs 10 -num_threads 2 -outfmt $out_format$ -show_gis""",
   xmlOutput = false,
-  assignmentConfiguration = AssignmentConfiguration(400, 0.8)
+  assignmentConfiguration = AssignmentConfiguration(400, 0.8),
+  flashTemplate = "flash 1.fastq 2.fastq"
 )
 
 object $name$ extends Metapasta(configuration) {
