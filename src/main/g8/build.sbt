@@ -9,7 +9,7 @@ description := ""
 organization := "$organization$"
 
 libraryDependencies ++= Seq(
-  "ohnosequences" %% "metapasta" % "0.9.12-RC2"
+  ("ohnosequences" %% "metapasta" % "0.9.12-RC2").exclude("com.amazonaws", "aws-java-sdk")
 )
 
 resolvers +=  Resolver.url("era7" + " public ivy releases",  url("http://releases.era7.com.s3.amazonaws.com"))(Resolver.ivyStylePatterns)
