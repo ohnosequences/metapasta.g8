@@ -23,7 +23,7 @@ object mockSamples {
 
 object configuration extends BlastConfiguration (
   metadataBuilder = new NisperonMetadataBuilder(new generated.metadata.$name$()),
-  defaultInstanceSpecs = NisperonConfiguration.defaultInstanceSpecs.copy(keyName = "nispero"),
+  defaultInstanceSpecs = NisperonConfiguration.defaultInstanceSpecs.copy(keyName = "$sshKeyPair$"),
   email = "$email$",
   password = "$password$",
   mappingWorkers = Group(size = 1, max = 100, instanceType = InstanceType.c1_medium, purchaseModel = SpotAuto),
